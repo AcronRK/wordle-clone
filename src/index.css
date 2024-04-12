@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.colorChange{
+    animation: flip 0.5s ease forwards;
+    background-color: #3a3a3c;
+}
+
+div.green{
+    --background-color: #538d4e;
+}
+
+div.grey{
+    --background-color: #3a3a3c;
+}
+
+div.yellow{
+    --background-color: #b59f3b;
+}
+
+@keyframes flip{
+    0% {
+        transform: rotateX(0);
+        background-color: #3a3a3c;
+    }
+
+    40% {
+        transform: rotateX(90deg);
+        background-color: #3a3a3c;
+    }
+
+    60% {
+        transform: rotateX(90deg);
+        background-color: var(--background-color);
+    }
+
+    100%{
+        transform: rotateX(0);
+        background-color: var(--background-color);
+    }
+}
