@@ -3,3 +3,5 @@ interface FormattedGuess {
     color: string;
 };
 
+
+type FormattedGuessArray = (FormattedGuess | undefined)[];

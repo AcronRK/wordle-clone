@@ -1,10 +1,11 @@
 import { useState } from "react"
 
+
 const useWordle = (solution:string) => {
     
     const [turn, setTurn] = useState<number>(0);
     const [guess, setGuess] = useState<string>("");
-    const [guessesList, setGuessesList] = useState([...Array(6)]); // list of lists (each letter of word is a value)
+    const [guessesList, setGuessesList] = useState<Array<Array<FormattedGuess>>>([...Array(6)].map(() => [])); // list of lists (each letter of word is a value)
     const [history, setHistory] = useState<string[]>([]);
     const [isCorrect, setIsCorrect] = useState<boolean>(false);
 
