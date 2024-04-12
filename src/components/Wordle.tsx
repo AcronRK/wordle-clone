@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import useWordle from '../hooks/useWordle'
 
 type Props = {
-    solution: string
+    solution: string,
 }
 
 const Wordle = ({solution}: Props) => {
 
-    const { guess, handleKeyUp } = useWordle(solution);
+    const { guess, handleKeyUp, guessesList, isCorrect, turn} = useWordle(solution);
 
     // fire keyup function when user writes a letter
     useEffect(() => {
@@ -18,10 +18,19 @@ const Wordle = ({solution}: Props) => {
         return () => window.removeEventListener('keyup', handleKeyUp);
     }, [handleKeyUp]);
 
+    useEffect(() => {
+        console.log(guessesList, turn, isCorrect)
+    },[guessesList, turn, isCorrect])
+
 
     return (
         <div>
-            {guess}
+            <div>
+                {solution}
+            </div>
+            <div>
+                {guess}
+            </div>
         </div>
     )
 }
