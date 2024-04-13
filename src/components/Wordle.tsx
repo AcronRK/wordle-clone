@@ -9,7 +9,7 @@ type Props = {
 
 const Wordle = ({solution}: Props) => {
 
-    const { guess, handleKeyUp, guessesList, isCorrect, turn} = useWordle(solution);
+    const { guess, handleKeyUp, guessesList, isCorrect, turn, usedLetters} = useWordle(solution);
 
     // fire keyup function when user writes a letter
     useEffect(() => {
@@ -29,7 +29,7 @@ const Wordle = ({solution}: Props) => {
         <div>
             {solution + " - " + guess }
             <Grid guess={guess} guessesList={guessesList} turn={turn}/>
-            <Keypad />
+            <Keypad usedLetters={usedLetters}/>
         </div>
     )
 }

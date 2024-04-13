@@ -5,12 +5,6 @@ type Props = {
     guess?: string
 }
 
-// color mapping to tailwind
-// const colorMapping: { [key: string]: string } = {
-//     "green": "bg-green",
-//     "yellow": "bg-yellow",
-//     "grey": "bg-grey"
-// }
 
 const Row = ({ formattedGuess, guess}: Props) => {
 

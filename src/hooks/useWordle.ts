@@ -8,6 +8,7 @@ const useWordle = (solution:string) => {
     const [guessesList, setGuessesList] = useState<Array<Array<FormattedGuess>>>([...Array(6)].map(() => [])); // list of lists (each letter of word is a value)
     const [history, setHistory] = useState<string[]>([]);
     const [isCorrect, setIsCorrect] = useState<boolean>(false);
+    const [usedLetters, setUsedLetters] = useState<UsedLetter>({})
 
     // input a guess and format it by finding each letters position and assigning colors
 
@@ -65,8 +66,34 @@ const useWordle = (solution:string) => {
         
         setTurn(turn + 1);
 
+        // ---- update the colors in the keyboard layout
+        setUsedLetters((prevUsedLetters) => {
+            let letters = {...prevUsedLetters};
+            // loop through the letters of the new guess
+            formattedGuess.forEach((letter) => {
+                // get current color saved in keyboard
+                let currentColor = letters[letter.key];
+
+                if(letter.color === "green"){
+                    // assign keyboard color to green
+                    letters[letter.key] = "green";
+                    return;
+                }
+                if(letter.color === "yellow" && currentColor !== "green"){ // if user already found the location of letter, do not update in the layout
+                    letters[letter.key] = "yellow";
+                    return;
+                }
+                if(letter.color === "grey" && currentColor !== "green" && currentColor !== "yellow"){
+                    letters[letter.key] = "grey";
+                    return;
+                }
+            })
+            return letters;
+        });
+
         // reset guess
         setGuess("");
+
 
     }
 
@@ -120,7 +147,7 @@ const useWordle = (solution:string) => {
         }
     }
 
-    return {turn, guess, guessesList, isCorrect, handleKeyUp}
+    return {turn, guess, guessesList, isCorrect, handleKeyUp, usedLetters}
 }
 
 export default useWordle;
