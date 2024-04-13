@@ -10,8 +10,7 @@ export default {
       'grey': '#3a3a3c',
       'yellow': '#b59f3b',
       'white': '#ffffff',
-      'keyboard': '#818384'
-    }
+    },
   },
   plugins: [],
 }
