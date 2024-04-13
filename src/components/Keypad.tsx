@@ -45,7 +45,7 @@ const Keypad = ({usedLetters}: Props) => {
                 return(
                     <div
                         key={index}
-                        className={`m-[5px] w-[40px] h-[50px] inline-block rounded-md uppercase leading-[50px] text-black justify-center`}
+                        className={`m-[5px] w-[40px] h-[50px] inline-block rounded-md uppercase leading-[50px] text-white justify-center`}
                         style={{ backgroundColor: getBackgroundColor(color)}}
                     >
                        {letter.key}

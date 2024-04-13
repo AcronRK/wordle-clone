@@ -3,6 +3,7 @@ import useWordle from '../hooks/useWordle'
 import Grid from './Grid';
 import Keypad from './Keypad';
 import GameOver from './GameOver';
+import DarkModeToggle from './DarkModeToggle';
 
 type Props = {
     solution: string,
@@ -38,7 +39,6 @@ const Wordle = ({solution}: Props) => {
 
     return (
         <div>
-            {solution + " - " + guess }
             <Grid guess={guess} guessesList={guessesList} turn={turn}/>
             <Keypad usedLetters={usedLetters}/>
             {/* show game over screen if isGameOver is true */}

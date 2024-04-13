@@ -20,9 +20,9 @@ const GameOver = ( {isCorrect, turn, solution}: Props) => {
 
         {/* bro lost */}
         {!isCorrect && (
-            <div>
+            <div className='max-w-[480px] bg-white p-[40px] rounded-md my-[10%] mx-auto shadow'>
                 <h1>You Suck!</h1>
-                <p>Solution: {solution}</p>
+                <p className='font-bold text-lg tracking-wide uppercase text-orange-700'>Solution: {solution}</p>
                 <p>Better luck next time!</p>
             </div>
         )}

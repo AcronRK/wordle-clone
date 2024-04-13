@@ -5,12 +5,12 @@ type Props = {}
 const Header = (props: Props) => {
     return (
         <header>
-            <div className='flex mt-10 justify-center'>
-            <h1 className='text-4xl'>
+            <div className='selector flex mt-6 justify-center'>
+            <h1 className='text-5xl tracking-wider font-bold text-black dark:text-white'>
                 Worlde
             </h1>
             </div>
-            <hr className='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
+            <hr className='my-5 border-1 border-grey-secondary' />
         </header>
         )
 }
