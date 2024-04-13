@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import keyboard from '../../data/keyboard.json'
 
 
+interface UsedLetter {
+    [key: string]: string;
+};
+
 type Props = {
-    usedLetters: UsedLetter
+    usedLetters: UsedLetter;
 }
 
 interface Letter {
