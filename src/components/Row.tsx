@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Props = {
     formattedGuess?: Array<FormattedGuess>
     guess?: string

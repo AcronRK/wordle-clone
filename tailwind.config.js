@@ -11,7 +11,7 @@ export default {
       'yellow': '#b59f3b',
       'white': '#ffffff',
       'keyboard': '#818384'
-    },
+    }
   },
   plugins: [],
 }
