@@ -20,6 +20,11 @@ div.yellow{
     --background-color: #b59f3b;
 }
 
+.bounce-border-animation{
+    animation: bounce 0.2s ease-in-out forwards;
+    border-color: #ddd;
+}
+
 @keyframes flip{
     0% {
         transform: rotateX(0);
@@ -40,4 +45,20 @@ div.yellow{
         transform: rotateX(0);
         background-color: var(--background-color);
     }
+}
+
+/* bouncing letters when user writes */
+@keyframes bounce{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+
 }
