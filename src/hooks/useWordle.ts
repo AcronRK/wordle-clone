@@ -33,7 +33,7 @@ const useWordle = (solution:string) => {
             }
         })
 
-        formattedGuess.forEach((letter, index) => {
+        formattedGuess.forEach((letter, _) => {
             if(solutionArray.includes(letter.key) && letter.color != "green"){
                 letter.color = 'yellow';
                 // wordle does 1 to 1 matching, so get the index of the found letter in the solution and remove it

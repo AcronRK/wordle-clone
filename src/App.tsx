@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react'
 import Wordle from './components/Wordle';
 import data from '../data/db.json'
 
-
-type Props = {}
-
-const App = (props: Props) => {
+const App = () => {
 
   const [solution, setSolution] = useState<string>("");
 

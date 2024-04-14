@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-const Header = (props: Props) => {
+const Header = () => {
     return (
         <header>
             <div className='selector flex mt-6 justify-center'>
