@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BsSunFill } from 'react-icons/bs';
 import { FaMoon } from 'react-icons/fa'
 
-type Props = {}
-
-const DarkModeToggle = (props: Props) => {
+const DarkModeToggle = () => {
 
   const [darkMode, setDarkMode] = useState<boolean>(false);
 
@@ -29,7 +27,7 @@ const DarkModeToggle = (props: Props) => {
 
   return (
     <section>
-      <button className='relative cursor-pointer w-16 h-8 flex items-center bg-black dark:bg-white rounded-full text-white dark:text-black'
+      <button className='relative cursor-pointer w-16 h-8  flex items-center bg-black dark:bg-white rounded-full text-white dark:text-black'
       onClick={() => setDarkMode(!darkMode)}
       >
         <FaMoon className="text-white" size={18}/>

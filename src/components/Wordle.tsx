@@ -3,7 +3,6 @@ import useWordle from '../hooks/useWordle'
 import Grid from './Grid';
 import Keypad from './Keypad';
 import GameOver from './GameOver';
-import DarkModeToggle from './DarkModeToggle';
 
 type Props = {
     solution: string,
